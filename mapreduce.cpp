@@ -29,7 +29,7 @@ bp::child map_(char* script_name, std::vector<std::string> &args,
 
     return map_proc;
 }
-
+ 
 bp::child reduce(char* script_name, std::vector<std::string> &args,
             const std::string &key, std::vector<std::string> &values) {
     bp::child reduce_proc = start_child(script_name, args);
