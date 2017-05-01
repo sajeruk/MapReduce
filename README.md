@@ -6,7 +6,6 @@
 3. Wikipedia 1.4.0 Python (https://pypi.python.org/pypi/wikipedia/)
 ## Compile and run
   Для компиляции флаг -lboost_system и -std=c++11 (11 стандарт и выше).  
-'iclude'
 ## Included scrpits
   1. Mapreduce script
   2. Map script
@@ -47,3 +46,4 @@
               key \t value \n  
               key \t value \n   
   	Входной файл должен содержать таблицу с пустым значением и url статьи англоязычной википедии в ключе. В выходном файле находятся все слова, встречающиеся в статьях, со списком всех статей, в которых слово содержится, разделенных '#'.
+![alt text](https://vk.com/im?peers=c94_c137&sel=44907761&z=photo44907761_456240329%2Fmail635088)
