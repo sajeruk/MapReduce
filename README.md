@@ -17,9 +17,8 @@
      **Run**: ./mapreduce mode "path_to_script" src_file dst_file  
     	*mode* - "map"/"reduce". Режим, в котором будет выполняться указанный в аргументах скрипт.  
     	*src_file*/*dst_file* - Формат входного и выходного файла: tsv (tab-separated-values):  
-	<key >   
-	\t value \n
-         key \t value \n   
+	'key \t value \n'  
+         'key \t value \n'   
        + **map** **mode**  
           Вызывает map-скрипт для каждой строки входного файла.  
        + **reduce** **mode**  
