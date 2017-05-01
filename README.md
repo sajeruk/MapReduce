@@ -5,7 +5,8 @@
 2. Boost.Process library
 3. Wikipedia 1.4.0 Python (https://pypi.python.org/pypi/wikipedia/)
 ## Compile and run
-  Для компиляции флаг -lboost_system и -std=c++11 (11 стандарт и выше).
+  Для компиляции флаг -lboost_system и -std=c++11 (11 стандарт и выше).  
+'iclude'
 ## Included scrpits
   1. Mapreduce script
   2. Map script
@@ -17,8 +18,8 @@
      **Run**: ./mapreduce mode "path_to_script" src_file dst_file  
     	*mode* - "map"/"reduce". Режим, в котором будет выполняться указанный в аргументах скрипт.  
     	*src_file*/*dst_file* - Формат входного и выходного файла: tsv (tab-separated-values):  
-              key \t value \n  
-              key \t value \n   
+	<key \t value \n >  
+         key \t value \n   
        + **map** **mode**  
           Вызывает map-скрипт для каждой строки входного файла.  
        + **reduce** **mode**  
@@ -26,7 +27,7 @@
   1. **Map script**  
      **Run**: ./map_script  
      Работает со стандартными потоками. Формат входа и выхода:  
-     			<key \t value \n>  
+     			key \t value \n 
 	 Разбивает значение на отдельные слова относительно пробела в качестве сепаратора. Выдает на выход слова длины больше, чем 2, со значением, равным входному ключу.  
   1. **Reduce** **script**  
      **Run**: ./map_script  
