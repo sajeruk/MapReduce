@@ -13,7 +13,7 @@
   4. Wikipedia script
   5. Inverse_index script
 ## Script description 
-  1. **Mapreduce** **script**  
+  ### **Mapreduce** **script**  
      **Run**: ./mapreduce mode "path_to_script" src_file dst_file  
     	*mode* - "map"/"reduce". Режим, в котором будет выполняться указанный в аргументах скрипт.  
     	*src_file*/*dst_file* - Формат входного и выходного файла: tsv (tab-separated-values):  
