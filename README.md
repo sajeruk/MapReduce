@@ -14,7 +14,7 @@
   5. Inverse_index script
 ## Script description 
   1. **Mapreduce** **script**  
-   ### **Run**: ./mapreduce mode "path_to_script" src_file dst_file  
+   **Run**: ./mapreduce mode "path_to_script" src_file dst_file  
     	*mode* - "map"/"reduce". Режим, в котором будет выполняться указанный в аргументах скрипт.  
     	*src_file*/*dst_file* - Формат входного и выходного файла: tsv (tab-separated-values):  
 		key \t value \n   
@@ -24,7 +24,7 @@
         **reduce** **mode**  
           Сортирует входные данные по ключам с помощью внешней сортировки MergeSort и вызывает reduce-скрипт для для всех значений соответсвующих одному ключу.  
   1. **Map script**  
-    ### **Run**: ./map_script  
+    **Run**: ./map_script  
      Работает со стандартными потоками. Формат входа и выхода:  
      			key \t value \n 
 	 Разбивает значение на отдельные слова относительно пробела в качестве сепаратора. Выдает на выход слова длины больше, чем 2, со значением, равным входному ключу.  
