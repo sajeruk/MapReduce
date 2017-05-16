@@ -9,7 +9,7 @@
 #include <queue>
 #include <sstream>
 
-constexpr size_t CHUNK_SZ = 100000;
+constexpr size_t CHUNK_SZ = 100000; // такие штуки лучше задавать через конфиг
 constexpr size_t MAX_CHUNK_SZ = 1000000;
 
 namespace bp = ::boost::process;
@@ -108,8 +108,8 @@ std::vector<std::string> sortChunk(std::vector<char> &buffer) {
 }
 
 void recordToChunk(std::vector<std::string> &data, const std::string& output) {
-    std::ofstream fout(output, std::ifstream::binary);
-    for(auto i : data) {
+    std::ofstream fout(output, std::ifstream::binary); // на чтении размер буфера выбираем, а на записи почему-то нет :(
+    for(auto i : data) { // а стандартный всего 8 Кб обычно
         fout << i << std::endl;
     }
     fout.close();
@@ -128,6 +128,7 @@ bool makeChunk(std::ifstream &fin, const int& chunk_id) {
         fin.read(&buffer[++last_ind], 1);
     }
 
+    // constify
     std::vector<std::string> sorted_data = sortChunk(buffer);
 
     std::string output_name = "output" + std::to_string(chunk_id) + ".txt";
@@ -154,9 +155,9 @@ void externalSort(const std::string& input_file,
 }
 
 std::string keyGroup(std::ifstream& fin,
-            std::pair<std::string, std::vector<std::string>>& group) {
-    std::string delimiter = "\t";
-    std::string value;
+            std::pair<std::string, std::vector<std::string>>& group) { // вот это + reduce нехорошо сделано
+    std::string delimiter = "\t"; // обрабатываем большой файл без гарантий что values для данного ключа влезут в память
+    std::string value; // можно же получить stdin процесса и писать туда по мере поступления ключей
     std::string cur_key = group.first;
 
     do {
