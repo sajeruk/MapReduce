@@ -64,7 +64,7 @@ int main(int argc, char* argv[])
 {
     enum func_args{mode = 1, scr_path = 2,
             default_num_of_args = 5, id_add_args = 3};
-    std::ifstream fin(argv[argc - 2]);
+    std::ifstream fin(argv[argc - 2]); // сегфолтить плохо всегда. надо проверить количество аргументов и вывести usage если что-то пошло не так
     std::ofstream fout(argv[argc - 1]);
 
     std::vector<std::string> script_arg = {"-o"};
@@ -81,7 +81,7 @@ int main(int argc, char* argv[])
             out(fout, map_proc.get_stdout());
         }
 
-    } else if (!strcmp(argv[mode], "reduce")) {
+    } else if (!strcmp(argv[mode], "reduce")) { // а если ни то ни другое? нельзя просто так молча завершать программу с кодом 0
         std::unordered_map<std::string, std::vector<std::string>> input;
 
         group(fin, input);
